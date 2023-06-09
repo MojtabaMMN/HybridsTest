@@ -1,0 +1,3 @@
+[submodule "resthub"]
+	path = resthub
+	url = git@github.com:alkemyst/resthub.git
