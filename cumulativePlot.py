@@ -3,7 +3,7 @@
 from rhapi import RhApi
 import pprint
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 import matplotlib.pyplot as plt
 import calendar
 import sys
@@ -172,9 +172,13 @@ class cumulativePlot:
         plt.setp(plotNBad, linewidth=1, color='g')
         plt.xticks(tInspection, tInspection, rotation =30, fontsize=6)
         plt.legend(loc='upper left')
-        outputplot = "NInspectedHybrid_Time_"+self.hybridtype+self.dtbs+".pdf"
+        outputplot = "output/NInspectedHybrid_Time_"+self.hybridtype+self.dtbs+".pdf"
+        plt.savefig(outputplot)
+        outputplot = "output/NInspectedHybrid_Time_"+self.hybridtype+self.dtbs+".png"
         plt.savefig(outputplot)
         plt.close()
+        with open('output/lastrun.txt', 'w') as f:
+            f.write('%s (UTC)' % datetime.now(timezone.utc))
         
         tInspection.clear()
         NumberOfInspected.clear()

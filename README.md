@@ -6,9 +6,12 @@ https://github.com/valdasraps/resthub/tree/master/clients/python/src/main/python
 # Checkout
 Use ```git clone --recurse-submodules```
 
+# Requirements
+- pyhton >= 3.7
+
 # Install
 ```bash
 pip install --user matplotlib
 pip install --user ilock
-
+pip install --user requests
 ```
